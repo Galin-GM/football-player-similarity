@@ -11,10 +11,10 @@ The Football Player Similarity Dashboard project aims to identify and group play
 ## Features
 
 - **Data Preprocessing:** Merges, cleans and filters football player performance data, including selecting relevant positions and handling missing or inconsistent values.
-- **Feature Engineering:** Selects and prepares performance metrics such as goals, shots, shooting accuracy, assists, passing, and progression statistics for player comparison.
+- **Feature Engineering:** Selects and prepares performance metrics such as goals, assists, shots, fouls drawn, offside and crosses for player comparison.
 - **Feature Scaling:** Standardises numerical features to ensure each statistic contributes fairly to the clustering process.
 - **Player Similarity:** Uses nearest neighbours and Euclidean distance to rank the most statistically similar players.
-- **K-Means Clustering:** Groups players into broad statisticall profiles during exploratory analysis.
+- **K-Means Clustering:** Groups players into broad statistical profiles during exploratory analysis.
 - **Cluster Visualisation:** Uses dimensionality reduction techniques such as PCA to visualise high dimensional player clusters in two dimensions.
 - **Cluster Evaluation:** Assesses clustering quality using techniques such as the Elbow Method and Silhouette Score to help determine an appropriate number of clusters.
 

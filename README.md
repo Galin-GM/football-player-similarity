@@ -6,12 +6,12 @@ The Football Player Similarity Dashboard project aims to identify and group play
 
 ## Features
 
-- Data Preprocessing: Merges, cleans and filters football player performance data, including selecting relevant positions and handling missing or inconsistent values.
-- Feature Engineering: Selects and prepares perforamnce metrics such as goals, shot, shooting accuracy, assists, passing, and progression statistics for player comparison.
-- Feature Scaling: Standardises numerical features to ensure each statistic contributes fairly to the clustering process.
-- K-Means Clustering: Groups players into clusters based on similarities across multiple performance features.
-- Cluster Visualisation: Uses dimensionality reduction techniques such as PCA to visualise high dimensional player clusters in two dimensions.
-- Cluster Evaluation: Assesses clustering quality using techniques such as the Elbow Method and Silhouette Score to help determine an appropriate number of clusters.
+- **Data Preprocessing:** Merges, cleans and filters football player performance data, including selecting relevant positions and handling missing or inconsistent values.
+- **Feature Engineering:** Selects and prepares perforamnce metrics such as goals, shot, shooting accuracy, assists, passing, and progression statistics for player comparison.
+- **Feature Scaling:** Standardises numerical features to ensure each statistic contributes fairly to the clustering process.
+- **K-Means Clustering:** Groups players into clusters based on similarities across multiple performance features.
+- **Cluster Visualisation:** Uses dimensionality reduction techniques such as PCA to visualise high dimensional player clusters in two dimensions.
+- **Cluster Evaluation:** Assesses clustering quality using techniques such as the Elbow Method and Silhouette Score to help determine an appropriate number of clusters.
 
 ## Data Sources
 
@@ -21,21 +21,21 @@ The statistics originate from FBref's 2025/2026 Premier League data:
 
 ## Installation
 
-Clone the repository and move into the project directory:
+1. **Clone the repository and move into the project directory:**
 
 ```bash
 git clone https://github.com/Galin-GM/football-player-similarity.git
 cd football-player-similarity
 ```
 
-Create and activate a virtual environment, then install the dependencies:
+2. **Create and activate a virtual environment, then install the dependencies:**
 
 ```bash
 python -m venv .venv
 python -m pip install -r requirements.txt
 ```
 
-Run the dashboard
+3. **Run the dashboard**
 
 ```bash
 python -m streamlit run app.py

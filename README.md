@@ -4,6 +4,10 @@
 
 The Football Player Similarity Dashboard project aims to identify and group players with similar playing profiles using performance statistics such as goals, shots, assists, crosses and other relevant metrics. The project uses machine learning techniques, specifically K-Means clustering, to analyse player performance data and discover groups of statistically similar players. These insights can help identify comparable players, understand different playing styles, and support football scouting and player analysis.
 
+## Live Deployed Link
+
+[Live Deployed Streamlit App](https://football-player-similarity.streamlit.app/)
+
 ## Dashboard Preview
 
 ![Football Player Similarity Dashboard](assets/dashboard.png)

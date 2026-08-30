@@ -29,6 +29,47 @@ def get_player_labels():
         forwards_lookup['PlayerLabel'].tolist()
     )
 
+def get_player_stats(player_label):
+    player_stats = forwards_lookup.loc[
+        forwards_lookup['PlayerLabel'].eq(player_label),
+        ['PlayerLabel', *features]
+    ].copy()
+
+    if player_stats.empty:
+        raise ValueError(
+            f"No forward found with the label: {player_label}"
+        )
+
+    return player_stats.reset_index(drop=True)
+
+def get_player_percentiles(player_labels):
+    missing_players = set(player_labels) - set(forwards_lookup['PlayerLabel'])
+
+    if missing_players:
+        raise ValueError(
+            f"Players not found: {missing_players}"
+        )
+
+    percentile_data = forwards_lookup[
+        ['PlayerLabel', *features]
+    ].copy()
+
+    percentile_data[features] = (
+        percentile_data[features]
+        .rank(pct=True)
+        .mul(100)
+        .round(0)
+    )
+
+    comparison = (
+        percentile_data
+        .set_index('PlayerLabel')
+        .loc[player_labels]
+        .reset_index()
+    )
+
+    return comparison
+
 def find_similar_players(player_label, number_of_results=5):
     matching_positions = forwards_lookup.index[
         forwards_lookup["PlayerLabel"].eq(player_label)
@@ -83,7 +124,10 @@ def find_similar_players(player_label, number_of_results=5):
         neighbour_positions
     ][result_columns].copy()
 
-    results["Distance"] = neighbour_distances
+    results["Similarity"] = [
+        round(distance, 3)
+        for distance in neighbour_distances
+    ]
 
     return results.reset_index(drop=True)
 

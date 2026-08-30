@@ -4,12 +4,17 @@
 
 The Football Player Similarity Dashboard project aims to identify and group players with similar playing profiles using performance statistics such as goals, shots, assists, crosses and other relevant metrics. The project uses machine learning techniques, specifically K-Means clustering, to analyse player performance data and discover groups of statistically similar players. These insights can help identify comparable players, understand different playing styles, and support football scouting and player analysis.
 
+## Dashboard Preview
+
+![Football Player Similarity Dashboard](assets/dashboard.png)
+
 ## Features
 
 - **Data Preprocessing:** Merges, cleans and filters football player performance data, including selecting relevant positions and handling missing or inconsistent values.
-- **Feature Engineering:** Selects and prepares perforamnce metrics such as goals, shot, shooting accuracy, assists, passing, and progression statistics for player comparison.
+- **Feature Engineering:** Selects and prepares performance metrics such as goals, shots, shooting accuracy, assists, passing, and progression statistics for player comparison.
 - **Feature Scaling:** Standardises numerical features to ensure each statistic contributes fairly to the clustering process.
-- **K-Means Clustering:** Groups players into clusters based on similarities across multiple performance features.
+- **Player Similarity:** Uses nearest neighbours and Euclidean distance to rank the most statistically similar players.
+- **K-Means Clustering:** Groups players into broad statisticall profiles during exploratory analysis.
 - **Cluster Visualisation:** Uses dimensionality reduction techniques such as PCA to visualise high dimensional player clusters in two dimensions.
 - **Cluster Evaluation:** Assesses clustering quality using techniques such as the Elbow Method and Silhouette Score to help determine an appropriate number of clusters.
 
@@ -17,7 +22,7 @@ The Football Player Similarity Dashboard project aims to identify and group play
 
 The statistics originate from FBref's 2025/2026 Premier League data:
 
-[FBref Premier League statistics](https://fbref.com/en/comps/9/2025-2026/2025-2026-Premier-League-Stats)
+[FBref Premier League statistics](https://fbref.com/en/comps/9/2025-2026/stats/2025-2026-Premier-League-Stats)
 
 ## Installation
 
@@ -55,10 +60,10 @@ python -m streamlit run app.py
 - The current model only compares forwards.
 - Results depend on the selected features.
 - Euclidean distance assumes that every standardised feature has equal importance.
-- A statistical match does not necessarily mean two players have identical tactical role
+- A statistical match does not necessarily mean two players have identical tactical roles.
 
 ## Future Improvements
 
-- Add seperate models and feature sets for midfielders, defenders, and goalkeepers.
+- Add separate models and feature sets for midfielders, defenders, and goalkeepers.
 - Compare players across leagues and seasons.
 - Improve dashboard styling.
